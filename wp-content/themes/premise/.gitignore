@@ -1,0 +1,21 @@
+# A .gitignore file for the Premise theme
+
+# # # # #
+
+# Exclude All Files
+/*
+
+# Don't ignore this .gitignore file
+!.gitignore
+
+# Don't ignore the WP Content directory folder
+!wp-content
+
+# Ignore everything inside WP Content directory except Themes + Plugins folder
+wp-content/*
+!wp-content/themes
+!wp-content/plugins/
+
+# Ignore everything in Themes folder except working theme
+wp-content/themes/*
+!wp-content/themes/premise
