@@ -378,10 +378,9 @@ main article.post h6 .quote-author {
   margin-right: auto;
 }
 
-main article.post .content h2 a {
+main article.post .content a {
   display: table;
   margin: 0 auto;
-  text-align: center !important;
 }
 
 main h2 .title {

@@ -380,12 +380,9 @@ main{
         }
 
         .content{
-            h2{
-                a{
-                    display: table;
-                    margin: 0 auto;
-                    text-align: center !important;
-                }
+            a{
+                display: table;
+                margin: 0 auto;
             }
         }
     }
@@ -402,8 +399,7 @@ main{
 }
 
 .dotted-break {
-
     width: 70%;
     margin-top: 100px !important;
     margin-bottom: 100px !important;
-} 
+}
