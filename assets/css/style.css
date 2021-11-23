@@ -1,0 +1,160 @@
+/*  
+Theme Name: Sly 2020
+Theme URI: https://ericslyfield.com/themes/ericslyfieldcom
+Description: A 2020 portfolio theme with grid-responsive blog functionality and custom post types for audio and video.
+Author: Eric Slyfield
+Author URI: https://ericslyfield.com
+Template: fields
+Version: 1.0.0
+License: GNU General Public License v2 or Later
+License URI: http://www.gnu.org/licenses/gpi-2.0.html
+Tags: blog, portfolio, minimal,
+*/
+/**
+ * Premise Custom Variables
+ */
+/**
+ * WooCommerce CSS Variables
+ */
+@use "./font-library";
+@use "./woocommerce";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  color: black; }
+  body a {
+    color: #000; }
+  body a:hover {
+    color: #006400; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* END: HTML5 display-role reset for older browsers */
+/* START: Global Navigation Styling */
+header {
+  display: grid;
+  flex: 1 1 50%;
+  float: clear; }
+  header nav#site-title {
+    float: left;
+    padding: 0 10px; }
+  header nav#global-nav {
+    margin: 0 auto; }
+  header nav#menu-nav {
+    float: right;
+    text-align: right; }
+    header nav#menu-nav ul li.current_page_item a {
+      border-bottom: 2px forestgreen; }
+    header nav#menu-nav ul {
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      float: right; }
+      header nav#menu-nav ul a {
+        padding: 0 10px; }
+
+/* END: Global Navigation Styling */
+.thumbnail {
+  display: flex;
+  position: relative;
+  width: 80%;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  justify-content: center; }
+
+video {
+  width: 100%; }
+
+.content, .content-container {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80vw; }
+  .content p, .content-container p {
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+    .content p iframe, .content-container p iframe {
+      display: flex;
+      position: relative;
+      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center !important;
+      width: 61%;
+      height: 55.825vh; }
+      .content p iframe video, .content-container p iframe video {
+        width: 100%;
+        height: 100%; }
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important; }
+
+.video-container {
+  display: flex;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden; }
+
+/* Post Image Centering (Gutenberg Fix) */
+.jetpack-lazy-images-js .jetpack-lazy-image {
+  display: block; }
+
+.wp-block-image .aligncenter, .wp-block-image .alignleft, .wp-block-image .alignright, .wp-block-image.is-resized {
+  display: block;
+  text-align: center; }
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*# sourceMappingURL=style.css.map */
