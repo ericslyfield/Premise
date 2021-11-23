@@ -1,0 +1,399 @@
+/*  
+Theme Name: Sly 2020
+Theme URI: https://ericslyfield.com/themes/ericslyfieldcom
+Description: A 2020 portfolio theme with grid-responsive blog functionality and custom post types for audio and video.
+Author: Eric Slyfield
+Author URI: https://ericslyfield.com
+Template: fields
+Version: 1.0.0
+License: GNU General Public License v2 or Later
+License URI: http://www.gnu.org/licenses/gpi-2.0.html
+Tags: blog, portfolio, minimal,
+*/
+/**
+ * Premise Custom Variables
+ */
+/**
+ * WooCommerce CSS Variables
+ */
+@use "./font-library";
+@use "./woocommerce";
+/* CSS Reset Rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object,
+video {
+  margin-bottom: 28px;
+  margin-bottom: 2.8rem;
+  max-width: 100%;
+}
+
+p > embed,
+p > iframe,
+p > object,
+span > embed,
+span > iframe,
+span > object {
+  margin-bottom: 0;
+}
+
+/* HTML5 Display-role Reset for Older Browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: flow-root !important;
+}
+
+body {
+  line-height: 1;
+  color: black;
+}
+
+body a {
+  color: #000;
+}
+
+body a:hover {
+  color: #006400;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+p {
+  margin: 10px !important;
+}
+
+/* END: HTML5 display-role reset for older browsers */
+header {
+  background: #ffffff80;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  left: 0;
+  height: 40px;
+  position: fixed;
+  top: 40px;
+  bottom: 20px;
+  -webkit-transition: top .3s ease-in-out;
+  transition: top .3s ease-in-out;
+  width: 100%;
+  z-index: 25;
+  line-height: 0;
+  padding: 35px;
+}
+
+header .navigation {
+  padding: 0 35px;
+}
+
+header div#site-title {
+  float: left;
+  padding: 0 10px;
+}
+
+header div#global-nav {
+  margin: 0 auto;
+}
+
+header div#menu-nav {
+  float: right;
+  text-align: right;
+}
+
+header div#menu-nav ul li.current_page_item a {
+  border-bottom: 2px forestgreen;
+}
+
+header div#menu-nav ul {
+  margin: 0 auto;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  float: right;
+}
+
+header div#menu-nav ul a {
+  padding: 0 10px;
+}
+
+header div#menu-nav ul .current-menu-item {
+  text-decoration: line-through;
+}
+
+.hide-nav {
+  top: -70px;
+  padding: 35px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.small {
+  font-size: small;
+}
+
+.medium {
+  font-size: medium;
+}
+
+.large {
+  font-size: large;
+}
+
+.x-large {
+  font-size: x-large;
+}
+
+.xx-large {
+  font-size: xx-large;
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(15px) all 0.3s ease-in-out;
+          filter: blur(15px) all 0.3s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.thumbnail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wp-caption .wp-caption-text {
+  border: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.sidebar .widget_media_image .aligncenter {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+iframe {
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.content .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.content .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content .status {
+  font-style: italic;
+  display: table;
+  margin: 0 auto;
+}
+
+.content p {
+  font-weight: 300;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.content p .videoplayer {
+  position: absolute;
+  padding-bottom: 56.25%;
+}
+
+.home .embed-youtube iframe {
+  margin-left: auto;
+  margin-right: auto !important;
+}
+
+.video-container iframe {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.video-container {
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.widget {
+  position: unset !important;
+}
+
+/* Post Image Centering (Gutenberg Fix) */
+.jetpack-lazy-images-js .jetpack-lazy-image {
+  display: block;
+}
+
+.wp-block-image .aligncenter, .wp-block-image .alignleft, .wp-block-image .alignright, .wp-block-image.is-resized {
+  display: block;
+  text-align: center;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* END: Global Image Styling */
+/* START: Post Format Styling */
+h2 {
+  font-size: 1.5rem !important;
+}
+
+.title {
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-author {
+  margin: 0 auto;
+}
+
+main {
+  padding-top: 150px;
+}
+
+main article.post {
+  width: 70vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+}
+
+main article.post .category, main article.post .date, main article.post .thumbnail, main article.post .time {
+  display: table;
+  margin: 0px auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+main article.post h6 .quote-author {
+  display: table;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main article.post .content h2 a {
+  display: table;
+  margin: 0 auto;
+  text-align: center !important;
+}
+
+main h2 .title {
+  display: table;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dotted-break {
+  width: 70%;
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+}
+/*# sourceMappingURL=style.css.map */

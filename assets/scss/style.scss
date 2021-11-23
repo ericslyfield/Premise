@@ -1,0 +1,409 @@
+/*  
+Theme Name: Sly 2020
+Theme URI: https://ericslyfield.com/themes/ericslyfieldcom
+Description: A 2020 portfolio theme with grid-responsive blog functionality and custom post types for audio and video.
+Author: Eric Slyfield
+Author URI: https://ericslyfield.com
+Template: fields
+Version: 1.0.0
+License: GNU General Public License v2 or Later
+License URI: http://www.gnu.org/licenses/gpi-2.0.html
+Tags: blog, portfolio, minimal,
+*/
+
+@import "./variables";
+@use "./font-library";
+@use "./woocommerce";
+
+/* CSS Reset Rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+	max-width: 100%;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object,
+video {
+	margin-bottom: 28px;
+	margin-bottom: 2.8rem;
+	max-width: 100%;
+}
+
+p > embed,
+p > iframe,
+p > object,
+span > embed,
+span > iframe,
+span > object {
+	margin-bottom: 0;
+}
+
+/* HTML5 Display-role Reset for Older Browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: flow-root !important;
+}
+
+body {
+	line-height: 1;
+    color: black;
+
+    a {
+        color: #000;
+    }
+
+    a:hover{
+        color: $forestgreen;
+    }
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+p{
+    margin: 10px !important;
+}
+
+
+/* END: HTML5 display-role reset for older browsers */
+
+// /* START: Global Navigation Styling */
+
+header {
+    background: #ffffff80;
+    display: grid;
+    flex: 1 1 50%;
+    left: 0;
+    height: 40px;
+    position: fixed;
+    top: 40px;
+    bottom: 20px;
+    transition: top .3s ease-in-out;
+    width: 100%; 
+    z-index: 25;
+    line-height: 0;
+    padding: 35px;
+
+        .navigation{
+            padding: 0 35px;
+        }
+
+        div#site-title{
+            float: left;
+            padding: 0 10px;
+        }
+
+        div#global-nav{
+            margin: 0 auto;
+        }
+
+        div#menu-nav{
+            float: right;
+            text-align: right;
+
+            ul li.current_page_item a {
+                border-bottom: 2px forestgreen;
+               }
+
+            ul{
+                margin: 0 auto;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                float: right;
+
+                a {
+                    padding: 0 10px;
+                }
+
+                .current-menu-item{
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+
+// Sticky Header Rules
+
+.hide-nav {
+    top: -70px;
+    padding: 35px;
+}
+
+// Font Rules
+
+.bold{
+    font-weight: bold;
+}
+
+.small{
+    font-size: small;
+}
+
+.medium{
+    font-size: medium;
+}
+
+.large{
+    font-size: large;
+}
+
+.x-large{
+    font-size: x-large;
+}
+
+.xx-large{
+    font-size: xx-large;
+}
+
+
+// Specialized Styling
+
+.blur{
+    width: 100%;
+    height: 100%;
+    filter: blur(15px) all .3s ease-in-out;;
+}
+
+// /* END: Global Navigation Styling */
+
+// /* START: Global Image Styling */
+
+img{
+    max-width: 100%; 
+    height: auto;
+}
+
+// Feautured Image Styling
+
+.thumbnail {
+    display: flex;
+    position: relative;
+    width: 100%;        
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    justify-content: center;
+    }
+
+.wp-caption .wp-caption-text {
+    border: none;
+    justify-content: center;
+    text-align: center;
+}
+
+.sidebar .widget_media_image .aligncenter {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+iframe{
+    border: none;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: hidden;
+}
+
+// Video + Image Post Styling (iframe)
+
+.content{
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+    }
+
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .status{
+        font-style: italic;
+        display: table;
+        margin: 0 auto;
+    }
+
+        p{
+            // text-indent: 25px;
+            font-weight: 300;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            
+            .videoplayer{
+            position: absolute;
+            padding-bottom: 56.25%;
+            }
+        }
+}
+
+.home .embed-youtube iframe {
+    margin-left: auto ;
+    margin-right: auto !important;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.video-container {
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+// Soundcloud Embed Styling
+
+.widget{
+    position: unset !important;
+
+}
+
+/* Post Image Centering (Gutenberg Fix) */
+
+.jetpack-lazy-images-js .jetpack-lazy-image {
+    display: block;
+}
+
+.wp-block-image .aligncenter, .wp-block-image .alignleft, .wp-block-image .alignright, .wp-block-image.is-resized {
+    display: block;
+    text-align: center;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* END: Global Image Styling */
+
+/* START: Post Format Styling */
+
+h2{
+    font-size: 1.5rem !important;
+}
+
+.title {
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote-author{
+    margin: 0 auto;
+}
+
+main{
+
+    padding-top: 150px;
+
+    article.post{
+
+        width: 70vw;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: auto;
+
+        .category, .date, .thumbnail, .time{
+            display: table;
+            margin: 0px auto;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        h6{
+            .quote-author{
+                    display: table;
+                    margin: 0 auto;
+                    margin-left: auto;
+                    margin-right: auto;
+            }
+        }
+
+        .content{
+            h2{
+                a{
+                    display: table;
+                    margin: 0 auto;
+                    text-align: center !important;
+                }
+            }
+        }
+    }
+
+    h2{
+        .title{
+            display: table;
+            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+}
+
+.dotted-break {
+
+    width: 70%;
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+} 

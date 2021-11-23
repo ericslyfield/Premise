@@ -1,0 +1,113 @@
+/* WP 3.6 Native Audio Player styling*/
+
+/* Change Player Background Colour */
+.mejs-controls,
+.mejs-mediaelement,
+.mejs-container {
+
+  padding: 15px !important;
+	background: url('') !important;
+	background-color: #ffffff00 !important;
+}
+
+/* Change the Color of the Lettering */
+.mejs-currenttime,
+.mejs-duration {
+    color: black !important;
+    font-size: large;
+}
+
+/* Current Volume */
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+    background: #99be8f !important;
+}
+
+/* Total Volume */
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
+    background: #ccc !important;
+}
+
+/* Eliminates the Yellow Border Around Play Button During Playback */
+.mejs-controls .mejs-button button:focus {
+outline: none !important;
+}
+
+/* Use a Sprite File with Darker Transport Icons */
+.mejs-controls .mejs-button button {
+	background-image: url('/wp-content/themes/premise/assets/images/mejs-controls-dark.svg') !important;
+}
+
+
+/* Total Time Properties */
+.mejs-controls .mejs-time-rail .mejs-time-total {
+	background: #99be8f !important;
+}
+
+/* Current Time Properties */
+.mejs-controls .mejs-time-rail .mejs-time-current {
+	background: #1e5636 !important;
+    
+}
+
+/* Loading Bar Properties */
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+    // background-image: url('/wp-content/themes/premise/assets/images/static.jpg') !important;
+	background: #ccc !important;
+}
+
+/* Playlist Styling */
+
+.wp-playlist-light {
+    // box-shadow: 3px 3px 0 #e2e2e2;
+    border: none;
+  }
+  
+  /* Captions - Track titles / subtitles, time */
+  .wp-playlist-light .wp-playlist-caption,
+  .wp-playlist-light .wp-playlist-item-length {
+    color: #000000;
+  }
+  
+  /* Captions - Current track */
+  .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-title {
+    font-size: 16px;
+  }
+  
+  .wp-playlist-light .wp-playlist-item-album {
+    font-style: normal;
+  }
+  
+  .wp-playlist-light .wp-playlist-item-artist {
+    text-transform: none;
+    opacity: .8;
+  }
+  
+  /* Playlist items */
+
+  .wp-playlist {
+    border: 0px solid #ffffff00 !important;
+    padding: 0px !important;
+    padding-top: 10px !important;
+    margin: 15px 0 15px !important;
+}
+  .wp-playlist-light .wp-playlist-item {
+    padding: 10px 0;
+    border-bottom-color: #efefef;
+  }
+  
+  .wp-playlist-light .wp-playlist-item:last-child {
+    padding-bottom: 0;
+  }
+  
+  .wp-playlist-light .wp-playlist-playing {
+    font-weight: normal;
+    border-bottom-color: #99be8f;
+  }
+  
+  .wp-playlist-light .wp-playlist-item-length {
+    top: 10px;
+  }
+
+  .wp-playlist-caption {
+    justify-content: center;
+  }
