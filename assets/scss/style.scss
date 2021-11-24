@@ -242,7 +242,6 @@ img{
 iframe{
     border: none;
     display: flex;
-    text-align: center;
     margin: 0 auto;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -253,11 +252,12 @@ iframe{
 
 .content{
     width: 100%;
-    display: block;
+    display: inline-grid;
     position: relative;
+    margin: 0 auto;
     margin-left: auto;
     margin-right: auto;
-    overflow: hidden;
+    word-wrap: break-word;
 
     .videoWrapper {
         position: relative;
@@ -281,7 +281,6 @@ iframe{
     }
 
         p{
-            // text-indent: 25px;
             font-weight: 300;
             font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
             
@@ -357,10 +356,9 @@ main{
 
     article.post{
 
-        width: 70vw;
+        width: 85vw;
         flex-direction: column;
-        justify-content: space-around;
-        margin: auto;
+        margin: 0 auto;
 
         .category, .date, .thumbnail, .time{
             display: table;
@@ -381,10 +379,17 @@ main{
 
         .content{
             a{
-                display: table;
+                position: relative;
+                display: inline-grid;
                 margin: 0 auto;
+                word-wrap: break-word;
+                padding: 15px;
+                color: $forestgreen;
             }
         }
+
+        }
+
     }
 
     h2{
@@ -393,10 +398,12 @@ main{
             margin: 0 auto;
             margin-left: auto;
             margin-right: auto;
-        }
 
+            a{
+                color: $forestgreen;
+            }
+        }
     }
-}
 
 .dotted-break {
     width: 70%;

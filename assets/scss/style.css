@@ -246,7 +246,6 @@ iframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
   margin: 0 auto;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -255,11 +254,13 @@ iframe {
 
 .content {
   width: 100%;
-  display: block;
+  display: -ms-inline-grid;
+  display: inline-grid;
   position: relative;
+  margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .content .videoWrapper {
@@ -353,14 +354,12 @@ main {
 }
 
 main article.post {
-  width: 70vw;
+  width: 85vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin: auto;
+  margin: 0 auto;
 }
 
 main article.post .category, main article.post .date, main article.post .thumbnail, main article.post .time {
@@ -379,15 +378,24 @@ main article.post h6 .quote-author {
 }
 
 main article.post .content a {
-  display: table;
+  position: relative;
+  display: -ms-inline-grid;
+  display: inline-grid;
   margin: 0 auto;
+  word-wrap: break-word;
+  padding: 15px;
+  color: #006400;
 }
 
-main h2 .title {
+h2 .title {
   display: table;
   margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+h2 .title a {
+  color: #006400;
 }
 
 .dotted-break {
