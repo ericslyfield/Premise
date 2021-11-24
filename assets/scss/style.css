@@ -116,7 +116,7 @@ header {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
-  left: 0;
+  left: 13px;
   height: 40px;
   position: fixed;
   top: 40px;
