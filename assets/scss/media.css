@@ -51,6 +51,10 @@
 }
 
 /* Playlist Styling */
+.wp-playlist-tracks {
+  padding: 15px;
+}
+
 .wp-playlist-light {
   border: none;
 }
