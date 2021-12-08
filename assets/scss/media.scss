@@ -90,8 +90,8 @@ outline: none !important;
 
   .wp-playlist {
     border: 0px solid #ffffff00 !important;
-    padding: 0px !important;
-    padding-top: 10px !important;
+    padding: 60px !important;
+    padding-top: 30px !important;
     margin: 15px 0 15px !important;
 }
   .wp-playlist-light .wp-playlist-item {
@@ -112,6 +112,20 @@ outline: none !important;
     top: 10px;
   }
 
+  .wp-playlist-current-item{
+
+    display: none;
+    overflow: visible !important;
+    height: auto !important;
+
+    img{
+      padding: 25px;
+      display: table;
+    }
+  }
+
   .wp-playlist-caption {
     justify-content: center;
+    padding-left: 55px;
+    padding-top: 15px;
   }
