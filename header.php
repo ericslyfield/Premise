@@ -20,6 +20,7 @@
 
     <?php wp_head(); ?>
 
+
 </head>
 
 <!-- Displays Class Names for the Body Element -->
@@ -36,7 +37,6 @@
 
 ?>
 
-
 <!-- Navigation Wrapper -->
 <div class="navigation bold show-navigation" >
 
@@ -51,10 +51,29 @@
             <li>
                 <?php wp_nav_menu(
                     [ 'theme_location' => 'header-menu',
-                    'menu_class' => 'navigation',
+                    'menu_class' => 'header-menu',
                     ]);?>             
             </li>
         </ul>
     </div>
 
+    <a  id="toggle-nav" class="toggle-nav" onclick="toggleVis()" href="#!">&#9776;</a>
+
 </div>
+
+<div id="mobile-wrap" class="x-large bold">
+
+<?php wp_nav_menu(
+    [ 'theme_location'  => 'mobile-menu',
+    'menu_class'        => 'mobile-menu',
+    'menu_id'           =>  'mobile-menu',
+]);?>   
+
+</div> 
+
+         
+
+
+
+
+

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 class Options {
 
@@ -17,22 +17,22 @@ class Options {
 
        // Post Format Support
        add_theme_support( 'post-formats', [ 
-           'standard', 
+           'standard',
+           'image',
+           'video',
+           'audio', 
            'status',
            'aside',
-           'image',
-           'audio',
-           'video',
            'quote',
+           'gallery',
            'link',
-           'chat',
             ] );
 
        // Post Thumbnail Support
        add_theme_support( 'post-thumbnails' );
        add_image_size( 'small', 350, 350, false );
-       add_image_size( 'medium', 750, 750, false );
-       add_image_size( 'large', 1700, 1700, false ); 
+       add_image_size( 'medium', 825, 825, false );
+       add_image_size( 'large', 1250, 1250, false ); 
 
        // Title Support
        add_theme_support( 'title-tag' );

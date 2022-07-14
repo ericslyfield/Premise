@@ -17,7 +17,7 @@
 <main>
 
     <article>
-        <?php get_template_part( 'template-parts/page/default' )?>
+        <?php get_template_part( 'template-parts/page/single' )?>
     </article>
 
 </main>

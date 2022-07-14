@@ -11,7 +11,7 @@
 <h2>
     <div class="title xx-large">
         <!-- The Post Title -->
-        <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
+        <a href="#!"><?php the_title(); ?></a>
     <div>
 </h2>
 

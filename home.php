@@ -1,46 +1,58 @@
 <?php
 
 /**
-* Root Home Page Template File
+* Blog Post Template File:
 *
 * @package Premise
 */
 
 ?>
 
-    <header>
+<header>
     <!-- Loads Header -->
     <?php get_header(); ?>
-    </header>
 
-    <main>
+    <script>
+        container = document.getElementById("#");
+
+        cont text = new Blotter.Text()
+    </script>
+
+</header>
+
+<br>
+<br>
+<br>
+
+<main id="main" class="blur-out">
 
     <?php if (have_posts()) : while( have_posts() ): the_post(); ?>
 
-        <!-- Loads Home Page Content -->
-        <article class="post">
+    <!-- Loads Home Page Content -->
+    <article class="post">
             
-		<!-- Category -->
-		<div class="category up small">
-			<a href="<?php the_permalink();?>"><?php $subcategory = new singleSubcategory(); ?></a>
-		</div>
+        <!-- Category -->
+        <div class="category up small bold">
+            <a href="<?php the_permalink();?>"><?php $subcategory = new singleSubcategory(); ?></a>
+        </div>
 
-		<!-- Dynamic Post Loader -->
-		<?php get_template_part('template-parts/post/type', get_post_format());?>
-
-        <article>
+        <div class="content">
+            <!-- Dynamic Post Loader -->
+            <?php get_template_part('template-parts/post/type', get_post_format());?>
+        </div>
 
         <!-- Dotted Line Break  -->
-		<hr class="dotted-break">
+        <hr class="dotted-break">
 
-        <?php endwhile; else: endif; ?>
+    <?php endwhile; else: endif; ?>
 
-        <nav class="postnav">
-        <?php posts_nav_link($sep = '', $prelabel = '< Newer', $nxtlabel = 'Older >'); ?>
-        
-    </main>
-    
-    <br>
+    <div class="postnav medium bold">
+        <?php posts_nav_link($sep = ' &nbsp; ', $prelabel = '< Newer', $nxtlabel = 'Older >'); ?>
+    </div>
+
+    </article>
+
+</main>
 
 <footer>
     <!-- Loads Footer -->

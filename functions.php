@@ -7,6 +7,7 @@
 */
 
 require( 'autoloader.php' );
+require_once( 'assets/ajax/filter.php' );
 
 // Loads Required Theme Plugins
 $Options = new Options;
@@ -16,6 +17,5 @@ $Styling = new Styling;
 
 // Displays Associated Post Format
 $formatDisplay = new formatDisplay;
-
 
 ?>

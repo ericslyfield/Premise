@@ -8,30 +8,27 @@
 
 ?>
 
+<br>
+<br>
+<br>
 
-<body>
+<?php 
+	if (have_posts()) : 
+	while( have_posts()): the_post(); ?>
 
-<?php if (have_posts()) : while( have_posts() ): the_post(); ?>
-
-		<!-- Category -->
-		<div class="category up">
-			<a href="<?php the_permalink();?>"><?php $subcategory = new singleSubcategory(); ?></a>
+		<div class="thumbnail">
+			<?php the_post_thumbnail('large'); ?>
 		</div>
+           
+        <div class="content quarters">
+		<div class="home-wrap">
 
-		<!-- Dynamic Post Loader -->
-		<?php get_template_part('template-parts/post/type', get_post_format());?>
+				<?php the_content(); ?>
+        </div>
+		</div>
+		
+<?php endwhile; else: endif; ?>
 
-		<!-- Dotted Line Break  -->
-		<hr class="dot-break">
-
-<?php endwhile; endif; ?>
-
-
-<?php
-	function your_themes_pagination(){
-		global $wp_query; 
-		echo paginate_links();
-	}
-?>
-
-</body>
+	<nav class="postnav small bold">
+        <?php posts_nav_link($sep = '*', $prelabel = '< Newer', $nxtlabel = 'Older >'); ?>
+	</nav>

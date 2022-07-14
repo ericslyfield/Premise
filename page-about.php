@@ -9,23 +9,22 @@
 
 ?>
 
-<body>
-			<br>
-            <br>
-			<br>
-            <br>
-			<div class="thumbnail">
-			<br>
-            <br>
-				<?php the_post_thumbnail('large'); ?>
-			</div>
+<header>
+    <!-- Loads Header -->
+    <?php get_header(); ?>
+</header>
 
-            <br>
-           
-            <div class="content">
-				<div class="content-container">
-					<?php the_content(); ?>
-				</div>
-            </div>
+<main>
+
+    <article>
+        <?php get_template_part( 'template-parts/page/about' )?>
+    </article>
+
+</main>
+
+<footer>
+    <!-- Loads Footer -->
+    <?php get_footer();?>
+</footer>
 
 	<div class="page-navigation"><p><?php posts_nav_link(); ?></p></div>

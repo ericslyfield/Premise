@@ -85,6 +85,9 @@
   padding: 60px !important;
   padding-top: 30px !important;
   margin: 15px 0 15px !important;
+  display: inline-block;
+  width: 100%;
+  position: relative;
 }
 
 .wp-playlist-light .wp-playlist-item {

@@ -7,6 +7,11 @@
 */
 
 ?>
+
+<div id="clock"></div>
+<br>
+<div id="foot">[!?]</div>
+
     <!-- Loads Footer -->
     <?php wp_footer(); ?>
 

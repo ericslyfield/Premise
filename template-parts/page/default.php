@@ -1,5 +1,3 @@
-<body>
-
 <?php if (have_posts()) : 
 	while( have_posts()): the_post(); ?>
 
@@ -14,6 +12,8 @@
             </div>
 
 
-	<div class="page-navigation"><p><?php posts_nav_link(); ?></p></div>
+	    <nav class="postnav">
+        	<?php posts_nav_link($sep = '', $prelabel = '< Newer', $nxtlabel = 'Older >'); ?>
+		</nav>
 
 <?php endwhile; else: endif; ?>

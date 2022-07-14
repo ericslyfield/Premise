@@ -18,7 +18,7 @@
 </div>
 
 <h6>
-    <div class="quote-author">
+    <div class="quote-author bold italic">
         <!-- The Post Title -->
         <?php echo "— " ?><a href="<?php the_permalink();?>"><?php the_title(); ?></a>
     </div>

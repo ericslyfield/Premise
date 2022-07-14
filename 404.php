@@ -1,1 +1,3 @@
-[Evenrtually there will be a photo of an Roland sp404 here.]
+<div class="center">
+    <p>404</p>
+</div>
